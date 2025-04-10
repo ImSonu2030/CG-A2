@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendering and manipulation of 3D models</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <canvas id="glCanvas"></canvas>
+        
+        <!-- Compact Control Panel in top-right corner -->
+        <div class="control-panel">
+            <div class="panel-section">
+                <h3>3D Viewer <span id="viewModeText">(3D)</span></h3>
+                <div class="status" id="selectedObject">No selection</div>
+            </div>
+            
+            <div class="panel-section">
+                <h4>Controls</h4>
+                <div class="control-grid">
+                    <div><kbd>V</kbd> Toggle View</div>
+                    <div><kbd>R</kbd> Auto-Rotate</div>
+                    <div><kbd>X/Y/Z</kbd> Rotate</div>
+                    <div><kbd>↑↓←→ &lt;&gt;</kbd> Move</div>
+                    <div><kbd>+/-</kbd> Scale</div>
+                    <div><kbd>Click</kbd> Select</div>
+                </div>
+            </div>
+            
+            <div class="panel-section">
+                <label for="modelSelect">Model:</label>
+                <select id="modelSelect" class="compact-select">
+                    <option value="model1">Model 1</option>
+                    <option value="model2">Model 2</option>
+                    <option value="both">Both</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"></script>
+    <script src="shaders/vertex.js"></script>
+    <script src="shaders/fragment.js"></script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
